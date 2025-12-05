@@ -3,7 +3,6 @@ package baguchi.twilight_crossbow.entity;
 import baguchi.twilight_crossbow.init.ModDamageTypes;
 import baguchi.twilight_crossbow.init.ModEntities;
 import it.unimi.dsi.fastutil.doubles.DoubleDoubleImmutablePair;
-import net.minecraft.client.particle.FireworkParticles;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.particles.ParticleTypes;
@@ -18,7 +17,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.MoverType;
-import net.minecraft.world.entity.projectile.FireworkRocketEntity;
 import net.minecraft.world.entity.projectile.ItemSupplier;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
@@ -33,7 +31,6 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
-import twilightforest.init.TFDamageTypes;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -200,8 +197,10 @@ public class IceFireworkRocketEntity extends Projectile implements ItemSupplier 
         this.level().broadcastEntityEvent(this, (byte)17);
         this.gameEvent(GameEvent.EXPLODE, this.getOwner());
         this.dealExplosionDamage();
-        this.playSound(SoundEvents.PLAYER_HURT_FREEZE, 1F, 1F);
-        this.playSound(SoundEvents.GLASS_BREAK, 1F, 1F);
+        if (!this.getExplosions().isEmpty()) {
+            this.playSound(SoundEvents.PLAYER_HURT_FREEZE, 1F, 1F);
+            this.playSound(SoundEvents.GLASS_BREAK, 1F, 1F);
+        }
         this.discard();
     }
 
