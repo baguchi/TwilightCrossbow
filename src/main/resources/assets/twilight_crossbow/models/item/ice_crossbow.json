@@ -78,34 +78,34 @@
       "predicate": {
         "pulling": 1
       },
-      "model": "twilight_crossbow:item/ice_pulling_0"
+      "model": "twilight_crossbow:item/ice_crossbow_pulling_0"
     },
     {
       "predicate": {
         "pulling": 1,
         "pull": 0.58
       },
-      "model": "twilight_crossbow:item/ice_pulling_1"
+      "model": "twilight_crossbow:item/ice_crossbow_pulling_1"
     },
     {
       "predicate": {
         "pulling": 1,
         "pull": 1.0
       },
-      "model": "twilight_crossbow:item/ice_pulling_2"
+      "model": "twilight_crossbow:item/ice_crossbow_pulling_2"
     },
     {
       "predicate": {
         "charged": 1
       },
-      "model": "twilight_crossbow:item/ice_arrow"
+      "model": "twilight_crossbow:item/ice_crossbow_arrow"
     },
     {
       "predicate": {
         "charged": 1,
         "firework": 1
       },
-      "model": "twilight_crossbow:item/ice_firework"
+      "model": "twilight_crossbow:item/ice_crossbow_firework"
     }
   ]
 }
