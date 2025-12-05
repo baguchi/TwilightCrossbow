@@ -1,6 +1,6 @@
 {
   "parent": "item/crossbow",
   "textures": {
-    "layer0": "twilight_crossbow:item/ice_crossbow_crossbow_firework"
+    "layer0": "twilight_crossbow:item/ice_crossbow_firework"
   }
 }
