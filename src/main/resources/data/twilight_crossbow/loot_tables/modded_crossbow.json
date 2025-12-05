@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "twilight_crossbow:triple_crossbow",
+          "weight": 1
+        },
+        {
+          "type": "minecraft:item",
+          "name": "twilight_crossbow:ice_crossbow",
+          "weight": 2
+        }
+      ]
+    }
+  ],
+  "random_sequence": "twilight_crossbow:modded_bow"
+}

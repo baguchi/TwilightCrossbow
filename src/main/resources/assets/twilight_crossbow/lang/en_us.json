@@ -1,0 +1,6 @@
+{
+  "item.twilight_crossbow.triple_crossbow": "Triple Crossbow",
+  "item.twilight_crossbow.ice_crossbow": "Ice Crossbow",
+  "death.attack.fireworks": "%1$s went off with a Freeze bang by %2$s",
+  "death.attack.fireworks.item": "%1$s went off with a bang due to a ice firework fired from %3$s by %2$s"
+}

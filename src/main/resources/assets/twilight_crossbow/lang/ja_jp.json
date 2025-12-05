@@ -1,0 +1,6 @@
+{
+  "item.twilight_crossbow.triple_crossbow": "トライクロスボウ",
+  "item.twilight_crossbow.ice_crossbow": "アイスクロスボウ",
+  "death.attack.fireworks": "%1$sは%2$sの放った氷の花火の破裂に耐え切れなかった",
+  "death.attack.fireworks.item": "%1$sは、%2$sが%3$sで発射した氷の花火に凍らされた"
+}
