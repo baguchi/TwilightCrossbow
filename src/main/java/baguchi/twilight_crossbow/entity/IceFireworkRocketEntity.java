@@ -303,7 +303,7 @@ public class IceFireworkRocketEntity extends Projectile implements ItemSupplier 
         } else {
             for (int i = 0; i < this.random.nextInt(3) + 10; i++) {
                 this.level().addParticle(
-                        ParticleTypes.SNOWFLAKE, x, y, z, this.random.nextGaussian() * 0.1, this.random.nextGaussian() * 0.1, this.random.nextGaussian() * 0.1
+                        ParticleTypes.SNOWFLAKE, x, y, z, this.random.nextGaussian() * 0.5, this.random.nextGaussian() * 0.5, this.random.nextGaussian() * 0.5
                 );
             }
         }
