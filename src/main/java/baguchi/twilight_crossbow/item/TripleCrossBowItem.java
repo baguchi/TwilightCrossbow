@@ -62,21 +62,22 @@ public class TripleCrossBowItem extends CrossbowItem {
             int var10000;
             if (var5 instanceof ServerLevel) {
                 ServerLevel serverlevel = (ServerLevel)var5;
-                var10000 = EnchantmentHelper.processProjectileCount(serverlevel, weapon, shooter, 3);
+                var10000 = EnchantmentHelper.processProjectileCount(serverlevel, weapon, shooter, 1);
             } else {
-                var10000 = 3;
+                var10000 = 1;
             }
 
-            int i = var10000;
+            int i = var10000 * 3;
             List<ItemStack> list = new ArrayList(i);
             ItemStack itemstack1 = ammo.copy();
 
-            for(int j = 0; j < i; ++j) {
+            for (int j = 0; j < i; ++j) {
                 ItemStack itemstack = useAmmo(weapon, j == 0 ? ammo : itemstack1, shooter, j > 0);
                 if (!itemstack.isEmpty()) {
                     list.add(itemstack);
                 }
             }
+
 
             return list;
         }
