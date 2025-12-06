@@ -2,6 +2,7 @@ package baguchi.twilight_crossbow;
 
 import baguchi.twilight_crossbow.init.ModEntities;
 import baguchi.twilight_crossbow.init.ModItems;
+import baguchi.twilight_crossbow.init.ModRecipes;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -24,7 +25,8 @@ public class TwilightCrossBow {
 
         ModItems.ITEM_REGISTRY.register(modEventBus);
         ModEntities.ENTITIES.register(modEventBus);
-
+        ModRecipes.RECIPE_TYPES.register(modEventBus);
+        ModRecipes.RECIPE_SERIALIZERS.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
     }
@@ -37,6 +39,10 @@ public class TwilightCrossBow {
         if (event.getTabKey() == TFCreativeTabs.EQUIPMENT.getKey()) {
             event.accept(ModItems.TRIPLE_CROSSBOW);
             event.accept(ModItems.ICE_CROSSBOW);
+        }
+
+        if (event.getTabKey() == TFCreativeTabs.ITEMS.getKey()) {
+            event.accept(ModItems.CROSSBOW_UPGRADE_SMITHING_TEMPLATE);
         }
     }
 

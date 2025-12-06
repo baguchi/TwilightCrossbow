@@ -1,6 +1,12 @@
 {
   "item.twilight_crossbow.triple_crossbow": "トライクロスボウ",
   "item.twilight_crossbow.ice_crossbow": "アイスクロスボウ",
+  "item.twilight_crossbow.crossbow_upgrade_smithing_template": "クロスボウ強化用鍛冶型",
+  "item.twilight_crossbow.smithing_template.crossbow_upgrade.additions_slot_description": "対応する素材をここに入れてください",
+  "item.twilight_crossbow.smithing_template.crossbow_upgrade.applies_to": "弓",
+  "item.twilight_crossbow.smithing_template.crossbow_upgrade.base_slot_description": "弓をここに入れてください",
+  "item.twilight_crossbow.smithing_template.crossbow_upgrade.ingredients": "弓に対応する素材(金のインゴットか氷)",
+  "upgrade.twilight_crossbow.crossbow_upgrade": "弓に対応する素材(金のインゴットか氷)",
   "death.attack.fireworks": "%1$sは%2$sの放った氷の花火の破裂に耐え切れなかった",
   "death.attack.fireworks.item": "%1$sは、%2$sが%3$sで発射した氷の花火に凍らされた"
 }
