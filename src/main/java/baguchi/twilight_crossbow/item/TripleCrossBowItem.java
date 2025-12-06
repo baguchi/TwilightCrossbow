@@ -4,12 +4,10 @@ import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.sounds.SoundSource;
-import net.minecraft.stats.Stats;
-import net.minecraft.util.Unit;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.CrossbowItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -17,7 +15,6 @@ import net.minecraft.world.item.component.ChargedProjectiles;
 import net.minecraft.world.item.enchantment.EnchantmentEffectComponents;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
-import net.neoforged.neoforge.event.EventHooks;
 
 import javax.annotation.Nullable;
 import java.util.ArrayList;
@@ -95,6 +92,40 @@ public class TripleCrossBowItem extends CrossbowItem {
         }
     }
 
+    @Override
+    protected void shoot(
+            ServerLevel level,
+            LivingEntity shooter,
+            InteractionHand hand,
+            ItemStack weapon,
+            List<ItemStack> projectileItems,
+            float velocity,
+            float inaccuracy,
+            boolean isCrit,
+            @Nullable LivingEntity target
+    ) {
+        float f = EnchantmentHelper.processProjectileSpread(level, weapon, shooter, 10.0F);
+        float f1 = projectileItems.size() == 1 ? 0.0F : 2.0F * f / (float) (projectileItems.size() - 1);
+        float f2 = (float) ((projectileItems.size() - 1) % 2) * f1 / 2.0F;
+        float f3 = 1.0F;
+
+        for (int i = 0; i < projectileItems.size(); i++) {
+            ItemStack itemstack = projectileItems.get(i);
+            if (!itemstack.isEmpty()) {
+                float f4 = f2 + f3 * (float) ((i + 1) / 2) * f1;
+                f3 = -f3;
+                Projectile projectile = this.createProjectile(level, shooter, weapon, itemstack, isCrit);
+                this.shootProjectile(shooter, projectile, i, velocity, inaccuracy, f4, target);
+                level.addFreshEntity(projectile);
+                weapon.hurtAndBreak(this.getDurabilityUse(itemstack), shooter, LivingEntity.getSlotForHand(hand));
+                if (weapon.isEmpty()) {
+                    break;
+                }
+            }
+        }
+    }
+
+    @Override
     public boolean useOnRelease(ItemStack stack) {
         return true;
     }
