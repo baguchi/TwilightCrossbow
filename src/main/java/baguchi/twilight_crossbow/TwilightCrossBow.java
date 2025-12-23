@@ -39,6 +39,7 @@ public class TwilightCrossBow {
         if (event.getTabKey() == TFCreativeTabs.EQUIPMENT.getKey()) {
             event.accept(ModItems.TRIPLE_CROSSBOW);
             event.accept(ModItems.ICE_CROSSBOW);
+            event.accept(ModItems.SEEKER_CROSSBOW);
         }
 
         if (event.getTabKey() == TFCreativeTabs.ITEMS.getKey()) {
