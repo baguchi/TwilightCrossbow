@@ -37,6 +37,18 @@ public class RebuildSmithingRecipe implements SmithingRecipe {
         return itemstack;
     }
 
+    public Ingredient getBase() {
+        return this.base;
+    }
+
+    public Ingredient getAddition() {
+        return this.addition;
+    }
+
+    public Ingredient getTemplate() {
+        return this.template;
+    }
+
     @Override
     public ItemStack getResultItem(HolderLookup.Provider registries) {
         return this.result;
