@@ -48,9 +48,9 @@ public class SnowGuardianMixin extends BaseIceMob implements CrossbowAttackMob {
         });
     }
 
-    @Inject(method = "makeItemForSlot", at = @At("RETURN"), cancellable = true)
+    @Inject(method = "makeItemForSlot", at = @At("HEAD"), cancellable = true)
     private void makeItemForSlot(EquipmentSlot slot, int type, CallbackInfoReturnable<Item> cir) {
-        if (slot == EquipmentSlot.MAINHAND && this.random.nextInt(3) == 0) {
+        if (slot == EquipmentSlot.MAINHAND && this.random.nextInt(2) == 0) {
             Item item;
             switch (type) {
                 case 1:
