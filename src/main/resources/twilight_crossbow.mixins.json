@@ -3,12 +3,15 @@
   "package": "baguchi.twilight_crossbow.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "CrossbowItemMixin",
+    "SnowGuardianMixin"
   ],
   "injectors": {
     "defaultRequire": 1
   },
   "minVersion": "0.8",
   "client": [
-    "ItemInHandRendererMixin"
+    "client.HumanoidModelMixin",
+    "client.ItemInHandRendererMixin"
   ]
 }

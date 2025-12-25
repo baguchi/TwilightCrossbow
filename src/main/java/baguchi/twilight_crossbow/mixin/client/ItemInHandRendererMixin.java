@@ -1,4 +1,4 @@
-package baguchi.twilight_crossbow.mixin;
+package baguchi.twilight_crossbow.mixin.client;
 
 import baguchi.twilight_crossbow.init.ModItems;
 import net.minecraft.client.renderer.ItemInHandRenderer;
