@@ -65,6 +65,7 @@ public class SnowGuardianMixin extends BaseIceMob implements CrossbowAttackMob {
                 default:
                     item = ModItems.TRIPLE_CROSSBOW.get();
             }
+            cir.setReturnValue(item);
         }
     }
 
