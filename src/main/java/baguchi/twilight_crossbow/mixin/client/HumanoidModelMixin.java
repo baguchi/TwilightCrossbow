@@ -24,10 +24,11 @@ public class HumanoidModelMixin<T extends LivingEntity> {
 
     @Inject(method = "prepareMobModel(Lnet/minecraft/world/entity/LivingEntity;FFF)V", at = @At("HEAD"))
     public void prepareMobModel(T entity, float limbSwing, float limbSwingAmount, float partialTick, CallbackInfo ci) {
-        this.rightArmPose = HumanoidModel.ArmPose.EMPTY;
-        this.leftArmPose = HumanoidModel.ArmPose.EMPTY;
         ItemStack itemstack = entity.getItemInHand(InteractionHand.MAIN_HAND);
         if (entity instanceof SnowGuardian snowGuardian) {
+            this.rightArmPose = HumanoidModel.ArmPose.EMPTY;
+            this.leftArmPose = HumanoidModel.ArmPose.EMPTY;
+
             if (itemstack.getItem() instanceof CrossbowItem) {
                 if (snowGuardian.isUsingItem()) {
                     if (entity.getMainArm() == HumanoidArm.RIGHT) {
