@@ -29,6 +29,7 @@ public class KnightCrossBowItem extends CrossbowItem {
         }
     }
 
+
     private static float getShootingPower(ChargedProjectiles projectile) {
         return projectile.contains(Items.FIREWORK_ROCKET) ? 2.25F : 4.65F;
     }

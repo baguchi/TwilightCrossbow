@@ -1,6 +1,7 @@
 package baguchi.twilight_crossbow.init;
 
 import baguchi.twilight_crossbow.TwilightCrossBow;
+import baguchi.twilight_crossbow.item.EnderCrossbowItem;
 import baguchi.twilight_crossbow.item.IceCrossBowItem;
 import baguchi.twilight_crossbow.item.SeekerCrossBowItem;
 import baguchi.twilight_crossbow.item.TripleCrossBowItem;
@@ -24,6 +25,7 @@ public class ModItems {
     public static final DeferredItem<Item> TRIPLE_CROSSBOW = ITEM_REGISTRY.register("triple_crossbow", () -> new TripleCrossBowItem((new Item.Properties().rarity(Rarity.UNCOMMON).durability(412).component(DataComponents.CHARGED_PROJECTILES, ChargedProjectiles.EMPTY).stacksTo(1))));
     public static final DeferredItem<Item> ICE_CROSSBOW = ITEM_REGISTRY.register("ice_crossbow", () -> new IceCrossBowItem((new Item.Properties().rarity(Rarity.UNCOMMON).durability(412).component(DataComponents.CHARGED_PROJECTILES, ChargedProjectiles.EMPTY).stacksTo(1))));
     public static final DeferredItem<Item> SEEKER_CROSSBOW = ITEM_REGISTRY.register("seeker_crossbow", () -> new SeekerCrossBowItem((new Item.Properties().rarity(Rarity.UNCOMMON).durability(412).component(DataComponents.CHARGED_PROJECTILES, ChargedProjectiles.EMPTY).stacksTo(1))));
+    public static final DeferredItem<Item> ENDER_CROSSBOW = ITEM_REGISTRY.register("ender_crossbow", () -> new EnderCrossbowItem((new Item.Properties().rarity(Rarity.UNCOMMON).durability(412).component(DataComponents.CHARGED_PROJECTILES, ChargedProjectiles.EMPTY).stacksTo(1))));
     //public static final DeferredItem<Item> KNIGHT_CROSSBOW = ITEM_REGISTRY.register("knight_crossbow", () -> new KnightCrossBowItem((new Item.Properties().rarity(Rarity.UNCOMMON).durability(512).component(DataComponents.CHARGED_PROJECTILES, ChargedProjectiles.EMPTY).stacksTo(1))));
 
 

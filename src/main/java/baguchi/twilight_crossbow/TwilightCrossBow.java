@@ -40,6 +40,7 @@ public class TwilightCrossBow {
             event.accept(ModItems.TRIPLE_CROSSBOW);
             event.accept(ModItems.ICE_CROSSBOW);
             event.accept(ModItems.SEEKER_CROSSBOW);
+            event.accept(ModItems.ENDER_CROSSBOW);
         }
 
         if (event.getTabKey() == TFCreativeTabs.ITEMS.getKey()) {
